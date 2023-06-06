@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+  <html >
+    <head>
+      <meta charset="UTF-8">
+      <title>MachineLearning API</title>
+      
+      <style>
+        body { 
+          background: url("https://media.istockphoto.com/id/1186553317/vector/fluent-motion.jpg?s=612x612&w=0&k=20&c=DxjeydHExk2YfT-LsRlTCPet2ceqdfRD1-uwjZpcWMY=");
+          background-repeat: no-repeat;
+          background-size: cover;
+          text-align: center;
+        }
+        .container {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      </style>
+  
+    </head>
+    
+    <body>
+     <div class="container">
+      <h1>Predict the Number of Sales</h1>
+    
+         <!-- Main Input For Receiving Query to our ML -->
+        <form action="{{ url_for('predict')}}"method="post">
+        <input type="text" name="number of TV" placeholder="Number of TV" required="required" />
+            <input type="text" name="Number of Radio" placeholder="Number of Radio" required="required" />
+        <input type="text" name="Number of Newspaper" placeholder="Number of Newspaper" required="required" />
+    
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        </form>
+    
+       <br>
+       <br>
+       {{ prediction_text }}
+    
+     </div>
+     
+    </body>
+    </html>
